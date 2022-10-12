@@ -2,6 +2,17 @@ import './App.css';
 import Die from './components/Die'
 
 function App() {
+  function allNewDice() {
+    const newDiceArray =[];
+    for (let i=0; i<10; i++) {
+      let num = Math.round(Math.random() * (6 - 1) + 1);
+      newDiceArray.push(num)
+    }
+    return newDiceArray;
+  }
+
+  console.log(allNewDice());
+  
   return (
     <main>
       <div className="dice-container">
