@@ -13,6 +13,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .dice-container {
@@ -35,4 +37,14 @@ main {
 
 .die-num {
   font-size: 2rem;
+}
+
+.roll-btn {
+  height: 50px;
+  width: 125px;
+  border-radius: 4px;
+  background-color: #5035FF;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
 }

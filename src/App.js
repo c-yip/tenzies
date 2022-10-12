@@ -23,6 +23,7 @@ function App() {
       <div className="dice-container">
         {diceElements}
       </div>
+      {<button type='button' className='roll-btn'>Roll</button>}
     </main>
   );
 }
