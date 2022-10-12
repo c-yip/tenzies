@@ -14,7 +14,12 @@ function App() {
     return newDiceArray;
   }
 
-  console.log('dice state', dice);
+  function rollDice() {
+    // generate new array of nums
+    const newDiceArray = allNewDice();
+    // set dice state to that new array
+    setDice(newDiceArray);
+  }
   
   const diceElements = dice.map((die, index) => <Die key={index} value={die} />);
 
@@ -23,7 +28,7 @@ function App() {
       <div className="dice-container">
         {diceElements}
       </div>
-      {<button type='button' className='roll-btn'>Roll</button>}
+      {<button type='button' className='roll-btn' onClick={rollDice}>Roll</button>}
     </main>
   );
 }
