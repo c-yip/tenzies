@@ -46,13 +46,17 @@ main {
 
 .roll-btn {
   height: 50px;
-  width: 125px;
+  width: auto;
   border-radius: 4px;
   background-color: #5035FF;
   color: white;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .roll-btn:focus {
