@@ -16,12 +16,12 @@ function App() {
 
   console.log('dice state', dice);
   
+  const diceElements = dice.map((die, index) => <Die value={die} />);
+
   return (
     <main>
       <div className="dice-container">
-        {dice.map((die, index) =>
-          <Die value="1" />
-        )}
+        {diceElements}
       </div>
     </main>
   );
