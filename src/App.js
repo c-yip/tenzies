@@ -6,25 +6,30 @@ import Die from './components/Die';
 function App() {
   const [dice, setDice] = useState(allNewDice())
   
+  function generateNewDie() {
+    return {
+      value: Math.round(Math.random() * (6 - 1) + 1),
+      isHeld: false,
+      id: nanoid(),
+    }
+  }
+  
   function allNewDice() {
     const newDiceArray =[];
     for (let i=0; i<10; i++) {
-      const num = Math.round(Math.random() * (6 - 1) + 1);
-      const dieObject = {
-        value: num,
-        isHeld: false,
-        id: nanoid(),
-      }
-      newDiceArray.push(dieObject);
+      newDiceArray.push(generateNewDie());
     }
     return newDiceArray;
   }
 
   function rollDice() {
-    // generate new array of nums
-    const newDiceArray = allNewDice();
-    // set dice state to that new array
-    setDice(newDiceArray);
+    setDice(prev => 
+      prev.map(die => {
+        return !die.isHeld ? 
+          generateNewDie() :
+          die
+      })
+    )
   }
 
   function holdDice(id) {
@@ -44,7 +49,6 @@ function App() {
     />
   );
 
-  console.log(dice)
   return (
     <main>
       <div className="dice-container">
