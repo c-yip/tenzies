@@ -8,8 +8,12 @@ function App() {
   function allNewDice() {
     const newDiceArray =[];
     for (let i=0; i<10; i++) {
-      let num = Math.round(Math.random() * (6 - 1) + 1);
-      newDiceArray.push(num)
+      const num = Math.round(Math.random() * (6 - 1) + 1);
+      const dieObject = {
+        value: num,
+        isHeld: false
+      }
+      newDiceArray.push(dieObject);
     }
     return newDiceArray;
   }
@@ -21,8 +25,8 @@ function App() {
     setDice(newDiceArray);
   }
   
-  const diceElements = dice.map((die, index) => <Die key={index} value={die} />);
-
+  const diceElements = dice.map((die, index) => <Die key={index} value={die.value} />);
+  console.log(dice)
   return (
     <main>
       <div className="dice-container">
