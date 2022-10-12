@@ -16,7 +16,7 @@ function App() {
 
   console.log('dice state', dice);
   
-  const diceElements = dice.map((die, index) => <Die value={die} />);
+  const diceElements = dice.map((die, index) => <Die key={index} value={die} />);
 
   return (
     <main>
