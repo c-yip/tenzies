@@ -49,6 +49,11 @@ function App() {
       console.log('you won!', tenzies);
     } 
   }, [dice])
+
+  function newGame() {
+    setTenzies(false);
+    setDice(allNewDice());
+  }
   
   const diceElements = dice.map((die, index) => 
     <Die 
@@ -67,7 +72,7 @@ function App() {
       <div className="dice-container">
         {diceElements}
       </div>
-      <button type='button' className='roll-btn' onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
+      <button type='button' className='roll-btn' onClick={tenzies ? newGame : rollDice}>{tenzies ? "New Game" : "Roll"}</button>
     </main>
   );
 }
